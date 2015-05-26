@@ -1,0 +1,12 @@
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p>
+ 
+<p>
+  <strong>Text:</strong>
+  <%= @article.text %>
+</p>
+
+<%= link_to "back to all articles", articles_path %>
+<%= link_to "Delete this post!", article_path, method: :delete, data: { confirm: "Are you sure you want to delete this post?"} %>
