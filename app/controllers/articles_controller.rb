@@ -5,17 +5,21 @@ class ArticlesController < ApplicationController
 
 
 	def index
+		@user = User.find(params[:user_id])
 		@article = Article.all
 	end
 
 	def show 
+		@user = User.find(params[:user_id])
 	end
 
 	def new
+		@user = User.find(params[:user_id])
 		@article = Article.new
 	end
 
 	def create
+		@user = User.find(params[:user_id])
 		@article = Article.new(article_params)
 		if @article.save
 			redirect_to articles_path
@@ -26,9 +30,11 @@ class ArticlesController < ApplicationController
 	end
 
 	def edit
+		@user = User.find(params[:user_id])
   	end
 
   	def update
+  		@user = User.find(params[:user_id])
 	    if @article.update_attributes(article_params)
 	      redirect_to articles_path
 	    else
@@ -38,6 +44,7 @@ class ArticlesController < ApplicationController
   	end
 
   	def destroy
+  		@user = User.find(params[:user_id])
 	    @article.destroy
 	    redirect_to articles_path
   	end

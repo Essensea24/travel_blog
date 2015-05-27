@@ -1,10 +1,43 @@
 Rails.application.routes.draw do
 
-  resources :articles do
-    resources :comments
-  end
+  get 'users/index'
 
-  root 'welcome#index'
+  get 'users/create'
+
+  get 'users/new'
+
+  get 'users/show'
+
+  get 'users/edit'
+
+  get 'users/update'
+
+  get 'users/destroy'
+
+    resources :users do
+      resources :articles do
+        resources :comments
+      end
+    end
+ 
+  
+
+  # get 'user/index'
+
+  # get 'user/create'
+
+  # get 'user/new'
+
+  # get 'user/show'
+
+  # get 'user/edit'
+
+  # get 'user/update'
+
+  # get 'user/destroy'
+
+
+  root 'users#index'
 
   get "articles" => "articles#index" # get is the method, calling one argument which is the articles
   post "articles/" => "articles#create"
