@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
-  get "articles" => "articles#index"
+  get "articles" => "articles#index" # get is the method, calling one argument which is the articles
   post "articles/" => "articles#create"
   get "articles/new" => "articles#new"
   get "articles/:id/edit" => "articles#edit"
