@@ -5,4 +5,5 @@ class Article < ActiveRecord::Base
 	 { 	minimum: 20,
 	 	maximum: 200
 	 }
+	 validates :country, presence: true
 end
