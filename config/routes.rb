@@ -1,51 +1,42 @@
 Rails.application.routes.draw do
 
-  get 'users/index'
 
-  get 'users/create'
 
-  get 'users/new'
-
-  get 'users/show'
-
-  get 'users/edit'
-
-  get 'users/update'
-
-  get 'users/destroy'
-
-    resources :users do
-      resources :articles do
-        resources :comments
-      end
-    end
- 
+  root 'welcome#index'
   
+  resources :articles do
+    resources :comments
+  end
 
-  # get 'user/index'
-
-  # get 'user/create'
-
-  # get 'user/new'
-
-  # get 'user/show'
-
-  # get 'user/edit'
-
-  # get 'user/update'
-
-  # get 'user/destroy'
+  # get "users/"            => "users#index"
+  # post "users/"           => "users#create",      as: :create_user
+  # get "users/new"         => "users#new",         as: :new_user
+  # get "users/id/edit"     => "users#edit",        as: :edit_user
+  # patch "users/:id"       => "users#update",      as: :udpate_user
+  # get "users/:id"         => "users#show",        as: :user
+  # delete "users/:id"      => "users#destroy"
 
 
-  root 'users#index'
 
-  get "articles" => "articles#index" # get is the method, calling one argument which is the articles
-  post "articles/" => "articles#create"
-  get "articles/new" => "articles#new"
-  get "articles/:id/edit" => "articles#edit"
-  patch "articles/:id" => "articles#update"
-  get "articles/:id" => "articles#show"
-  delete "articles/:id" => "articles#destroy"
+  # get "articles"          => "articles#index" # get is the method, calling one argument which is the articles
+  # post "articles/"        => "articles#create",   as: :create_article
+  # get "articles/new"      => "articles#new"
+  # get "articles/:id/edit" => "articles#edit",     as: :edit_article
+  # patch "articles/:id"    => "articles#update",   as: :update_article
+  # get "articles/:id"      => "articles#show",     as: :article
+  # delete "articles/:id"   => "articles#destroy"
+
+
+  # get "comments"          => "comments#index" # get is the method, calling one argument which is the comments
+  # post "comments/"        => "comments#create",   as: :create_comment
+  # get "comments/new"      => "comments#new"
+  # get "comments/:id/edit" => "comments#edit",     as: :edit_comment
+  # patch "comments/:id"    => "comments#update",   as: :update_comment
+  # get "comments/:id"      => "comments#show",     as: :comment
+  # delete "comments/:id"   => "comments#destroy"
+
+
+
 
   
 
